@@ -1,6 +1,6 @@
-package Book;
+package book;
 
-public class Book {
+public class book {
 
 	private String title;
 	private String author;
@@ -8,11 +8,11 @@ public class Book {
 	private int edition;
 	private int chapters;
 	private char status;
-	public Book()
+	public book()
 	{
 		
 	}
-	public Book(String title, String author, int noOfPages, int edition, int chapters, char status) {
+	public book(String title, String author, int noOfPages, int edition, int chapters) {
 		setTitle(title);
 		setAuthor(author);
 		setNoOfPages(noOfPages);
@@ -20,18 +20,17 @@ public class Book {
 		setChapters(chapters);
 		setStatus('A');
 	}
-	public Book(String title, String author, int noOfPages, int edition,char status) {
+	public book(String title, String author, int noOfPages, int edition) {
 		setTitle(title);
 		setAuthor(author);
 		setNoOfPages(noOfPages);
 		setEdition(edition);
 		setStatus('A');
 	}
-	public Book(String title, String author, int noOfPages, int edition,char status) {
+	public book(String title, String author, int noOfPages) {
 		setTitle(title);
 		setAuthor(author);
 		setNoOfPages(noOfPages);
-		setEdition(edition);
 		setStatus('A');
 	}
 	public String getTitle() {
