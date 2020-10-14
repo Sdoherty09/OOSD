@@ -37,7 +37,7 @@ public void setWidth(double width) {
 	}
 	else 
 	{
-		System.out.println("Invalid length");
+		System.out.println("Invalid width");
 	}
 }
 public double getArea()
