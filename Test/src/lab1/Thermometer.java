@@ -26,4 +26,12 @@ public class Thermometer
 	{
 		return celsius;
 	}
+	public void setFahrenheit(double fahr)
+	{
+		celsius=((fahr-32)*5)/9;
+	}
+	public double getFahrenheit()
+	{
+		return ((celsius*9)/5)+32;
+	}
 } // end class Thermomete

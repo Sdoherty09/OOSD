@@ -18,6 +18,11 @@ public class ThermTest
 		Thermometer thermB=new Thermometer(10.0);
 		double tempB=thermB.getCelsius();
 		System.out.println("Temp. of Thermometer B is "+tempB);
+		tempB=thermB.getFahrenheit();
+		System.out.println("Temp. of Thermometer B is "+tempB);
+		thermB.setFahrenheit(100);
+		tempB=thermB.getCelsius();
+		System.out.println("Temp. of Thermometer B is "+tempB);
 		
 	} // end main
 } // end cl
