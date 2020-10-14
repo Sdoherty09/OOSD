@@ -1,7 +1,5 @@
 package lab1;
 
-import lab1.Thermometer;
-
 //Student Name 	: Oisin Cawley
 //Student Id Number: 
 //Date 			: Nov-2015
