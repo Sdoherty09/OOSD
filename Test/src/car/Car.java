@@ -52,4 +52,10 @@ public void setSold(boolean sold) {
 	this.sold = sold;
 }
 
+@Override
+public String toString() {
+	return "Car [make=" + make + ", model=" + model + ", engineSize=" + engineSize + ", price=" + price + ", sold="
+			+ sold + "]";
+}
+
 }
