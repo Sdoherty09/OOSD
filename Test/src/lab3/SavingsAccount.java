@@ -1,7 +1,7 @@
 package lab3;
 
 public class SavingsAccount {
-private float savingsBalance;
+private double savingsBalance;
 private double annualInterestRate;
 private int accountNo;
 private static int setNo=0;
@@ -18,7 +18,7 @@ public double getSavingsBalance() {
 	return savingsBalance;
 }
 
-public void setSavingsBalance(float savingsBalance) {
+public void setSavingsBalance(double savingsBalance) {
 	this.savingsBalance = savingsBalance;
 }
 
@@ -32,7 +32,7 @@ public void setAnnualInterestRate(double annualInterestRate) {
 
 public void calculateMonthlyInterest()
 {
-	this.savingsBalance+=savingsBalance*(annualInterestRate/12);
+	this.savingsBalance+=(savingsBalance*annualInterestRate)/12;
 }
 public void modifyInterestRate(double changeInterest)
 {
