@@ -48,8 +48,16 @@ public void setPrice(double price) {
 public boolean isSold() {
 	return sold;
 }
-public void setSold(boolean sold) {
-	this.sold = sold;
+public void sellCar() {
+	if(sold)
+	{
+		System.out.println("Car is already sold");
+	}
+	else
+	{
+		this.sold=true;
+		System.out.println("Sold car");
+	}
 }
 
 @Override

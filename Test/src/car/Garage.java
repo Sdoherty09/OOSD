@@ -40,7 +40,12 @@ public class Garage {
 						System.out.print("Enter price: ");
 						price=in.nextDouble();	
 						cars[noOfCars]= new Car(make,model,engineSize,price);
+						if(noOfCars>1)
+						{
+							cars[noOfCars].sellCar();
+						}
 						noOfCars++;
+						
 					}
 					else
 					{
