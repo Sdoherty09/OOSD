@@ -84,5 +84,6 @@ public static void main(String[] args)
 		}
 	}
 	while(menu>0);
+	input.close();
 }
 }
