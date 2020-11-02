@@ -12,7 +12,7 @@ public static void main(String[] args)
 	String program;
 	int increment=0;
 	int add=0;
-	while(true)
+	do
 	{
 		System.out.println("1: Add a car\n2: How many cars\n3: List all cars\n4: Wash next car\n5: Next car to be washed\n6: Remove all cars");
 		menu=input.nextInt();
@@ -25,13 +25,13 @@ public static void main(String[] args)
 				System.out.print("Add program: ");
 				program=input.nextLine();
 				currentCar=new CarWash(name,program);
-				tempList=new CarWash[waitingList.length+1];
+				tempList=new CarWash[waitingList.length+1]; //Temporary array with an incremented length
 				for (int index=0;index<waitingList.length;index++)
 				{
 					tempList[index]=waitingList[index];
 				}
-				tempList[waitingList.length]=currentCar;
-				waitingList=tempList;
+				tempList[waitingList.length]=currentCar; //Final position contains inputted entries
+				waitingList=tempList; //Update main array
 			break;
 			case 2:
 				System.out.println("Amount of cars: "+waitingList.length);
@@ -44,12 +44,12 @@ public static void main(String[] args)
 			break;
 			case 4:
 				name=waitingList[0].getName();
-				tempList=new CarWash[waitingList.length-1];
+				tempList=new CarWash[waitingList.length-1]; //Temporary array with a decremented length
 				for(int index=0;index<waitingList.length-1;index++)
 				{
-					tempList[index]=waitingList[index+1];
+					tempList[index]=waitingList[index+1]; //Left-shift array
 				}
-				waitingList=tempList;
+				waitingList=tempList; //Update main array
 				System.out.println(name+"'s car washed.");
 			break;
 			case 5:
@@ -59,27 +59,30 @@ public static void main(String[] args)
 				input.nextLine();
 				System.out.print("Select program: ");
 				program=input.nextLine();
-				for (int index=0;index<waitingList.length;index++)
+				for (int index=0;index<waitingList.length;index++) //Initial loop to count how many items to remove
 				{
 					if(waitingList[index].getProgram().equals(program))
 					{
 						increment++;						
 					}
 				}
-				tempList=new CarWash[waitingList.length-increment];
+				tempList=new CarWash[waitingList.length-increment]; //Expected length of updated array
 				for (int index=0;index<waitingList.length;index++)
 				{
-					if(!(waitingList[index].getProgram().equals(program)))
+					if(!(waitingList[index].getProgram().equals(program))) //Ignore entries with selected program and add the rest
 					{
-						tempList[add]=waitingList[index];
+						tempList[add]=waitingList[index]; 
 						add++;
 					}
 				}
 				waitingList=tempList;
 				System.out.println("Cars removed: "+increment);
 			break;
+			default:
+				System.out.println("Invalid selection");
+			break;
 		}
 	}
-	
+	while(menu>0);
 }
 }
