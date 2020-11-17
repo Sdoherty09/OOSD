@@ -86,13 +86,13 @@ public static void main(String[] args)
 				program=input.nextLine();
 					for(CarWash c: waitingList)
 					{
-						if(c.getProgram().equals(program))
+						if(c.getProgram().equals(program)) //Only print if program matches input
 						{
 							check=true;
 							System.out.println(c.toString());
 						}
 					}
-				if(check==false)
+				if(check==false) //If nothing printed
 				{
 					System.out.println("No cars found for program "+program);
 				}
@@ -102,11 +102,15 @@ public static void main(String[] args)
 				System.out.println("All cars removed");
 			break;
 			default:
-				System.out.println("Invalid selection");
+				if(menu<0)
+				{
+					System.out.println("Invalid selection");
+				}			
 			break;
 		}
 	}
 	while(menu>0);
+	System.out.println("Goodbye");
 	input.close();
 }
 }
