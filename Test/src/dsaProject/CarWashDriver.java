@@ -12,9 +12,10 @@ public static void main(String[] args)
 	String program;
 	int increment=0;
 	int add=0;
+	boolean check;
 	do
 	{
-		System.out.println("1: Add a car\n2: How many cars\n3: List all cars\n4: Wash next car\n5: Next car to be washed\n6: Remove all cars");
+		System.out.println("1: Add a car\n2: How many cars\n3: List all cars\n4: Wash next car\n5: Next car to be washed\n6: Remove all cars from program\n7. List all cars from program\n8. Remove all cars");
 		menu=input.nextInt();
 		switch(menu)
 		{
@@ -77,6 +78,28 @@ public static void main(String[] args)
 				}
 				waitingList=tempList;
 				System.out.println("Cars removed: "+increment);
+			break;
+			case 7: //listAll(program)
+				input.nextLine();
+				check=false;
+				System.out.print("Select program: ");
+				program=input.nextLine();
+					for(CarWash c: waitingList)
+					{
+						if(c.getProgram().equals(program))
+						{
+							check=true;
+							System.out.println(c.toString());
+						}
+					}
+				if(check==false)
+				{
+					System.out.println("No cars found for program "+program);
+				}
+			break;
+			case 8: //removeAll()
+				waitingList=new CarWash[0];
+				System.out.println("All cars removed");
 			break;
 			default:
 				System.out.println("Invalid selection");
