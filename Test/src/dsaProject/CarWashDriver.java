@@ -18,7 +18,7 @@ public static void main(String[] args)
 		menu=input.nextInt();
 		switch(menu)
 		{
-			case 1:
+			case 1: //addCar(car, program)
 				input.nextLine();
 				System.out.print("Add name: ");
 				name=input.nextLine();
@@ -33,16 +33,16 @@ public static void main(String[] args)
 				tempList[waitingList.length]=currentCar; //Final position contains inputted entries
 				waitingList=tempList; //Update main array
 			break;
-			case 2:
+			case 2: //size()
 				System.out.println("Amount of cars: "+waitingList.length);
 			break;
-			case 3:
+			case 3: //printCarsList()
 				for(CarWash c:waitingList)
 				{
 					System.out.println(c.toString());
 				}
 			break;
-			case 4:
+			case 4://wash()
 				name=waitingList[0].getName();
 				tempList=new CarWash[waitingList.length-1]; //Temporary array with a decremented length
 				for(int index=0;index<waitingList.length-1;index++)
@@ -52,10 +52,10 @@ public static void main(String[] args)
 				waitingList=tempList; //Update main array
 				System.out.println(name+"'s car washed.");
 			break;
-			case 5:
+			case 5: //nextCar()
 				System.out.println("Next car: "+waitingList[0]);
 			break;
-			case 6:
+			case 6: //removeAll(program)
 				input.nextLine();
 				System.out.print("Select program: ");
 				program=input.nextLine();
